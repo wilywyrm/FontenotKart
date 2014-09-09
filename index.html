@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Fontenot Kart Double Hash</title>
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #header { text-align: center; padding-top: 25px; }
+      #header-img {
+      		width: 50%;
+      		height: auto;
+      	}
+      #map-canvas { height: 70% }
+      #points { float: left; padding-left: 100px; }
+      #powerups { float: right; background-color: gray; height: 100px; margin-right: 100px; margin-top: -50px;}
+      #up1, #up3 { max-height: 100px; max-width: 100px; }
+      .powerup { height: 100px; width: 100px; }
+      #up2 { max-height: 100px; max-width: 100px; }
+      #ui { float: left; }
+      #footer { text-align: center; }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTAA9-RHoSETT3E9mI68xoBBsfw8MWa-M">
+    </script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="hkdh.js"></script>
+  </head>
+  <body>
+  	<div id="header"><img id="header-img" src="images/header.png" /></div>
+  	<div id="points">
+  		Point 1: <input type="text" name="1" value="University of Michigan EECS"><br />
+  		Point 2: <input type="text" name="2" value="Briarwood Mall, Ann Arbor"><br />
+  	</div>
+  	<table id="powerups">
+  		<tr>
+  			<td id="up1"></td>
+  			<td id="up2"></td>
+  			<td id="up3"></td>
+  		</tr>
+  	</table>
+  	<div id="ui">
+	  	<button onclick="addPoint()">Add point</button>
+	  	<button onclick="route()">Go</button>
+  	</div> 
+  	<br />
+  	<br />
+  	<br />
+  	<br />
+    <div id="map-canvas"></div>
+    <br />
+    <div id="footer">Add points to the route until you're happy, press GO! Use arrow keys to move and space bar to activate powerup.<br /> Made with grudging acquiesence by Rufei Zhou <br />and Executive Producers Berwin Xie, Mohammed Saad, and Yosub Shin at MHacks IV 2014</div>
+  </body>
+</html>
